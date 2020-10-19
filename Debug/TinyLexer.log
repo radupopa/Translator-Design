@@ -1,0 +1,3 @@
+﻿TinyLexer.obj : error LNK2019: unresolved external symbol "int __cdecl yylex(void)" (?yylex@@YAHXZ) referenced in function _main
+TinyLexer.obj : error LNK2001: unresolved external symbol "struct _iobuf * yyin" (?yyin@@3PAU_iobuf@@A)
+H:\TinyLexer\Debug\TinyLexer.exe : fatal error LNK1120: 2 unresolved externals
