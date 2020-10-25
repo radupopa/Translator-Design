@@ -1,6 +1,7 @@
 NAME		([a-zA-Z])[a-zA-Z0-9_]*
-NUMBER      [0-9]
+NUMBER      [0-9]+
 QCHAR       \'.\'
+COMMENT		\/{2}.*
 
 %{
 #include <stdio.h>
@@ -10,7 +11,7 @@ void count();
 %}
 
 %%
-"//"            { comment(); }
+"//"            { printf("Comment: "); comment(); }
 
 "int"           { count(); return(INT); }
 "return"        { count(); return(RETURN); }
@@ -40,6 +41,13 @@ void count();
 "=="            { count(); return(EQUAL); }
 "="             { count(); return(ASSIGN); }
 "-"             { count(); return(MINUS); }
+
+{NAME}			{ count(); return(NAME); }
+{NUMBER}		{ count(); return(CONSTANT); }
+{QCHAR}			{ count(); return(CONSTANT); }
+
+[ \t\v\n\f]		{ count(); }
+.				{ printf("The character is not valid"); }
 
 %%
 

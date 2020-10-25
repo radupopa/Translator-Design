@@ -28,5 +28,8 @@
 #define MINUS 25
 #define CHAR 26
 #define LESS 27
-#define END_OF_INSTRUCTION 28
+#define NAME 28
+#define CONSTANT 29
+#define COMMENT 30
+#define END_OF_INSTRUCTION 31
 #endif

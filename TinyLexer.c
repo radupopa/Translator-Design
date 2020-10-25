@@ -34,6 +34,9 @@ const char* lexUnits[] = { "END",
 							"MINUS",
 							"CHAR",
 							"LESS",
+							"NAME",
+							"CONSTANT",
+							"COMMENT",
 							"END_OF_INSTRUCTION" };
 
 int main()
